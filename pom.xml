@@ -97,7 +97,7 @@
                             <!-- Classpath is added to the manifest of the created jar file. -->
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>./lib</classpathPrefix>
-                            <mainClass>com.netease.liveshow.hostserver.HostServer</mainClass>
+                            <mainClass></mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -124,7 +124,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>com.springapp.mvc.JettyServer</mainClass>
+                            <mainClass></mainClass>
                         </manifest>
                     </archive>
                 </configuration>
