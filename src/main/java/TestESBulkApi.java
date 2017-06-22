@@ -4,7 +4,7 @@ import org.elasticsearch.action.admin.cluster.health.ClusterHealthResponse;
 import org.elasticsearch.client.transport.TransportClient;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.transport.InetSocketTransportAddress;
-import org.elasticsearch.transport.client.PreBuiltTransportClient;
+import org.elasticsearch.xpack.client.PreBuiltXPackTransportClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,7 +25,7 @@ public class TestESBulkApi {
                 .put("xpack.security.transport.ssl.enabled", false)
                 .put("xpack.security.user", "elastic:123456")
                 .put("transport.tcp.port", 9300).build();
-        TransportClient client = new PreBuiltTransportClient(settings);
+        TransportClient client = new PreBuiltXPackTransportClient(settings);
         client.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("10.130.11.37"), 9300));
 
         final ClusterHealthResponse res = client.admin().cluster().health(new ClusterHealthRequest()).actionGet();
