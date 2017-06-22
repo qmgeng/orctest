@@ -25,9 +25,14 @@
             <artifactId>jackson-core</artifactId>
             <version>2.6.2</version>
         </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.elasticsearch.client</groupId>-->
+            <!--<artifactId>transport</artifactId>-->
+            <!--<version>5.4.1</version>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.elasticsearch.client</groupId>
-            <artifactId>transport</artifactId>
+            <artifactId>x-pack-transport</artifactId>
             <version>5.4.1</version>
         </dependency>
         <dependency>
@@ -46,6 +51,19 @@
             <version>2.7</version>
         </dependency>
     </dependencies>
+    <repositories>
+        <!-- add the elasticsearch repo -->
+        <repository>
+            <id>elasticsearch-releases</id>
+            <url>https://artifacts.elastic.co/maven</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
     <build>
         <plugins>
             <plugin>
