@@ -21,8 +21,8 @@ public class TestESBulkApi {
                 .put("client.transport.sniff", true)
                 .put("node.name", "sample_client_node")
                 .put("transport.ping_schedule", "10s")
-//                .put("xpack.security.transport.ssl.enabled", true)
-//                .put("xpack.security.user", "elastic:123456")
+                .put("xpack.security.transport.ssl.enabled", false)
+                .put("xpack.security.user", "elastic:123456")
                 .put("transport.tcp.port", 9300).build();
         TransportClient client = new PreBuiltTransportClient(settings);
         client.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("10.130.11.37"), 9300));
